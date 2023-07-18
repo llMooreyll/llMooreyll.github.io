@@ -150,10 +150,10 @@ h6 {
     color: #aaa;
 }
 .markdown-body img {
-    width: 100%;
+    width: 80%;
     border-radius: 5px;
     display: block;
-    margin: 30px 0px;
+    margin: 30px auto;
     height: auto;
 }
 
