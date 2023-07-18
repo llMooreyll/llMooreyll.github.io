@@ -84,7 +84,7 @@
 `vec4` 是定义一个四维向量,我们用r(红色通道),g(绿色通道),b(蓝色通道),a(透明度值)即一个四维向量来定义一个颜色.  
 由`uniform`关键字定义的变量可以在着色器外部接收值,变量会显示在 `Inspector` 栏 `Material` >> `Shader Param` 下:  
 `hint_range` 在允许接受一个介于第一第二参数之前的值, `source_color`会在面板开一个选色板,方便快速选色  
-![Inspector选项卡](.\assets\img\Godot\9523f7e29c14d25e5a331237f6ea27c7.png)  
+![Inspector选项卡](./assets/img/Godot/9523f7e29c14d25e5a331237f6ea27c7.png)  
 在片段着色器中,可以通过重写**片段函数**(fragment)来控制着色器的运作.片段函数同时作用于每个像素,决定每个像素最终应该是什么颜色,最简单的片段函数,仅仅给像素赋一个颜色值,格式如下:
 ```C
 void fragment(){
@@ -106,7 +106,7 @@ void fragment(){
 ```
 
 效果如下:  
-![简单着色器](.\assets\img\Godot\b0475b7bb5c52f25da62b851e74319d2.png)
+![简单着色器](./assets/img/Godot/b0475b7bb5c52f25da62b851e74319d2.png)
 
 
 ## 实现简单特效
@@ -132,7 +132,7 @@ void fragment(){
             - 第三类是图片边沿的像素(即透明度为0但相邻的像素至少有一个透明度不为0)
         * 那么我们就可以用判断一个像素周边透明度的办法来判断该像素是不是边沿像素(第三类像素)  
         如果是,赋予其一个颜色,即可达到描边效果
-    ![三类像素](.\assets\img\Godot\2023-01-30_17.52.25.png)
+    ![三类像素](./assets/img/Godot/2023-01-30_17.52.25.png)
     + 算法实现:
         * (不应使用)用1.0(注意操作符两边的操作数类型必须相同所以使用1.0)分别除以图像的长和宽(用 `textureSize( )` 函数获取).将图像的长宽映射到1.0\*1.0的'UV坐标系中
         * 直接使用片段函数内置变量(Fragment built-ins Variable) `TEXTURE_PIXEL_SIZE` 获取默认2D纹理的标准像素大小(normalized pixel size)
@@ -191,7 +191,7 @@ void fragment(){
 }
 ```
 - 效果如下:  
-![最终效果](.\assets\img\Godot\2023-01-30_22-24-23.jpg)<br/>
+![最终效果](./assets/img/Godot/2023-01-30_22-24-23.jpg)<br/>
 
 
 ## External links
