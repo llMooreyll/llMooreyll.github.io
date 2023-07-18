@@ -174,7 +174,6 @@ sup {
 }
 
 a {
-    color: #03a87c;
     text-decoration: none;
     background-color: transparent;
     -webkit-text-decoration-skip: objects;
@@ -556,7 +555,6 @@ sup {
 }
 
 a {
-    color: #03a87c;
     text-decoration: none;
     background-color: transparent;
     -webkit-text-decoration-skip: objects;
@@ -11962,10 +11960,6 @@ input[type='button'].btn-block {
     a,
     a:hover {
         transition: all 0.2s;
-    }
-
-    a {
-        color: #03a87c;
     }
 
     a.text-dark:hover {
