@@ -1,4 +1,8 @@
 {
+    document.querySelector('#passageTitleCopy').innerHTML = document.querySelector('#passageTitle').innerHTML;
+}
+
+{
     let MarkdownIt = window.markdownit({
         html: true,
         linkify: true,
@@ -13,21 +17,21 @@
 }
 
 {
-    let Index = 0;
+    // let Index = 0;
     let titleTag = ['H1', 'H2', 'H3'];
     let titles = [];
-    let nodeToBeTraversed = document.querySelector('#raw-markdown-body');
+    let nodeToBeTraversed = document.querySelector('#markdown-body');
 
     function nodeTraverse(e, f) {
         // let Layer = 'layer-' + Index;
         f(e);
         if (e.hasChildNodes()) {
-            Index += 1;
+            // Index += 1;
             let children = e.childNodes;
             for (let i = 0; i < children.length; i++) {
                 nodeTraverse(children[i], f);
             }
-            Index -= 1;
+            // Index -= 1;
         }
     }
 
@@ -63,7 +67,7 @@
     for (let index in titles) {
         document.querySelector('#category').innerHTML +=
             "<li class='index' style='padding-left: " +
-            (titles[index].level * 22) +
+            titles[index].level * 22 +
             "px;'>" +
             "<a href='#" +
             titles[index].id +

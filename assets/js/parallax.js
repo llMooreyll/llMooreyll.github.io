@@ -22,11 +22,11 @@ function hideNavbar() {
     }else{
         category.style.opacity = 0;
     }
-    if (scrollTop - previousPageYOffset > 0) {
-        hiddenNavbar.style.top = `-70px`;
-    } else {
-        hiddenNavbar.style.top = `0px`;
-    }
+    // if (scrollTop - previousPageYOffset > 0) {
+    //     hiddenNavbar.style.top = `-70px`;
+    // } else {
+    //     hiddenNavbar.style.top = `0px`;
+    // }
     previousPageYOffset = scrollTop;
 }
 
