@@ -94,6 +94,36 @@
     }
 }
 
+.markdown-body a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* 状态一: 未被访问过的链接 */
+.markdown-body a:link {
+    text-decoration: none;
+    color: #00000096;
+    border-bottom: 2px solid #000;
+    margin-right: 5px;
+}
+
+/* 状态二: 已经访问过的链接 */
+.markdown-body a:visited {
+    text-decoration: none;
+    color: #000;
+}
+
+/* 状态三: 鼠标划过(停留)的链接(默认红色) */
+.markdown-body a:hover {
+    text-decoration: none;
+    color: #000000;
+}
+/* 状态四: 被点击的链接 */
+.markdown-body a:active {
+    text-decoration: none;
+    color: #000;
+}
+
 .markdown-body h1 {
     font-size: 2.2em;
     font-weight: 700;
@@ -164,8 +194,8 @@ h6 {
     color: var(--color-fg-default);
     background-color: var(--color-canvas-default);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: 20px;
+    line-height: 1.6;
     word-wrap: break-word;
 }
 
@@ -206,7 +236,6 @@ h6 {
 
 .markdown-body a {
     background-color: transparent;
-    color: var(--color-accent-fg);
     text-decoration: none;
 }
 
@@ -329,7 +358,8 @@ h6 {
 }
 
 .markdown-body a:hover {
-    text-decoration: underline;
+    /* text-decoration: underline; */
+    border-bottom: 2px solid #000;
 }
 
 .markdown-body ::placeholder {
