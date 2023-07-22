@@ -10,10 +10,10 @@
     });
 
     let text = document.querySelector('#raw-markdown-body').textContent,
-        target = document.querySelector('#raw-markdown-body'),
+        markdownTarget = document.querySelector('#raw-markdown-body'),
         result = MarkdownIt.render(text);
 
-    target.innerHTML = result;
+    markdownTarget.innerHTML = result;
 }
 
 {
@@ -40,6 +40,7 @@
         // if (titleTag.includes(e.nodeName) && (layer == 'layer-1' || layer == 'layer-2')) {
         if (titleTag.includes(e.nodeName)) {
             // e.setAttribute('layer', layer);
+            e.setAttribute('class', 'index');
             let result = e.textContent;
             e.setAttribute('id', result);
             // let eChildOne = e.firstElementChild;
@@ -79,4 +80,30 @@
     // function strSubtract(str1, str2) {
     //     return str1.substring(0, str1.length - str2.length);
     // }
+}
+
+{
+    let observer = new IntersectionObserver(highlightCurrentIndex, {
+        root: null,
+        rootMargin: '0px 0px 999999999px 0px',
+        threshold: 0,
+    });
+
+    let observerTargets = document.querySelectorAll('.markdown-body .index');
+    observerTargets.forEach((observerTarget) => {
+        observer.observe(observerTarget);
+    });
+
+    let previousHighlightIndex = undefined;
+    function highlightCurrentIndex(entries) {
+        if (previousHighlightIndex){
+            previousHighlightIndex.style.color = '#00000065';
+        }
+        let entry = entries.reduce((a, b) => {
+            return a.IntersectionRatio > b.IntersectionRatio ? a : b;
+        });
+        let id = entry.target.id;
+        previousHighlightIndex = document.querySelector(`a[href="#${id}"]`);
+        previousHighlightIndex.style.color = '#000000';
+    }
 }

@@ -17,7 +17,7 @@ const parallaxTick = () => {
 
 function hideNavbar() {
     let scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
-    if (scrollTop > 300) {
+    if (scrollTop > 150) {
         category.style.opacity = 1.0;
     }else{
         category.style.opacity = 0;
