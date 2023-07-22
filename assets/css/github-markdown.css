@@ -919,6 +919,7 @@ h6 {
     font-size: 85%;
     line-height: 1.45;
     background-color: var(--color-canvas-subtle);
+    /* background-color: #f6f8fa4b; */
     border-radius: 6px;
 }
 

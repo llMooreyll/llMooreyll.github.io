@@ -1,10 +1,21 @@
 html{
     scroll-behavior:smooth;
-    scroll-padding-top: 75px;
+    scroll-padding-top: 90px;
+}
+
+body{
+    background-color: #bbb8aba4;
+    background-image: url("../img/natural-paper.png");
+    background-repeat: repeat;
 }
 
 body .markdown-body {
     padding: 0px 45px 45px;
+    box-shadow: 5px -5px 20px #3333339a ;
+    mix-blend-mode: multiply;
+    border:1px solid #33333311;
+    /* background-image: url("../img/notebook-dark.png.png"); */
+    /* background-color: #b7ae8f5d; */
 }
 
 @font-face {
@@ -15,7 +26,7 @@ body .markdown-body {
 
 .markdown-body {
     position: relative;
-    top: 640px;
+    top: 680px;
     font-family: sans-serif;
     color: #333333;
     overflow: hidden;
@@ -30,7 +41,7 @@ body .markdown-body {
 
 #category {
     position: fixed;
-    right: 5%;
+    right: 4%;
     top: 35%;
     opacity: 0;
     transition: 0.2s;
@@ -49,7 +60,9 @@ body .markdown-body {
 }
 
 .passage-head-image{
-    opacity: 0.8;
+    opacity: 1;
+    mix-blend-mode: hard-light;
+    filter: blur(2px);
 }
 
 .post-title{
