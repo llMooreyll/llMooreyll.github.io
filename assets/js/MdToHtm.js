@@ -68,7 +68,7 @@
     for (let index in titles) {
         document.querySelector('#category').innerHTML +=
             "<li class='index' style='padding-left: " +
-            titles[index].level * 22 +
+            (titles[index].level - 1) * 22 +
             "px;'>" +
             "<a href='#" +
             titles[index].id +
@@ -83,27 +83,24 @@
 }
 
 {
-    let observer = new IntersectionObserver(highlightCurrentIndex, {
-        root: null,
-        rootMargin: '0px 0px 999999999px 0px',
-        threshold: 0,
-    });
+    function highlightCurrentIndex() {
+        let titles_ = document.querySelectorAll('.markdown-body .index');
+        let indexes = document.querySelectorAll('#category a');
+        let scrollHeight = window.scrollY + (window.screen.height / window.devicePixelRatio) * 0.3;
 
-    let observerTargets = document.querySelectorAll('.markdown-body .index');
-    observerTargets.forEach((observerTarget) => {
-        observer.observe(observerTarget);
-    });
-
-    let previousHighlightIndex = undefined;
-    function highlightCurrentIndex(entries) {
-        if (previousHighlightIndex){
-            previousHighlightIndex.style.color = '#00000065';
+        for (let i = 0; i < titles_.length; i++) {
+            let elScrollHeight =
+                titles_[i].getBoundingClientRect().top + (document.documentElement.scrollTop || window.scrollY || document.body.scrollTop);
+            if (elScrollHeight < scrollHeight) {
+                for (let p = 0; p < indexes.length; p++) {
+                    indexes[p].removeAttribute('class', 'currentlyReading');
+                }
+                indexes[i].setAttribute('class', 'currentlyReading');
+            }
         }
-        let entry = entries.reduce((a, b) => {
-            return a.IntersectionRatio > b.IntersectionRatio ? a : b;
-        });
-        let id = entry.target.id;
-        previousHighlightIndex = document.querySelector(`a[href="#${id}"]`);
-        previousHighlightIndex.style.color = '#000000';
     }
+
+    window.addEventListener('scroll', () => {
+        highlightCurrentIndex();
+    });
 }
