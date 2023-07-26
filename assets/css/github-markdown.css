@@ -598,8 +598,8 @@ h6 {
 .markdown-body table,
 .markdown-body pre,
 .markdown-body details {
-    margin-top: 0;
-    margin-bottom: 16px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .markdown-body blockquote > :first-child {
@@ -748,7 +748,7 @@ h6 {
 
 .markdown-body table th,
 .markdown-body table td {
-    padding: 6px 13px;
+    padding: 4px 10px;
     border: 1px solid var(--color-border-default);
 }
 
@@ -759,6 +759,16 @@ h6 {
 
 .markdown-body table tr:nth-child(2n) {
     background-color: var(--color-canvas-subtle);
+}
+
+.markdown-body pre table tr {
+    background-color: var(--color-canvas-subtle);
+    border-top: none;
+}
+
+.markdown-body pre table th,
+.markdown-body pre table td {
+    border: none;
 }
 
 .markdown-body table img {
@@ -919,7 +929,7 @@ h6 {
     font-size: 85%;
     line-height: 1.45;
     background-color: var(--color-canvas-subtle);
-    /* background-color: #f6f8fa4b; */
+    /* background: #2d2d2d; */
     border-radius: 6px;
 }
 

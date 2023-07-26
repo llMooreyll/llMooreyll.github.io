@@ -4,8 +4,8 @@ html{
 }
 
 body{
-    background-color: #bbb8aba4;
-    background-image: url("../img/natural-paper.png");
+    /* background-color: #bbb8aba4; */
+    background-image: url("../img/TB1xzbUumBYBeNjy0FeXXbnmFXa-125-121.png");
     background-repeat: repeat;
 }
 
@@ -39,30 +39,15 @@ body .markdown-body {
     max-width: 60%;
 }
 
-#category {
-    position: fixed;
-    right: 4%;
-    top: 35%;
-    opacity: 0;
-    transition: 0.2s;
-}
-
-.index{
-    margin: 0px 10px 20px 15px;
-    font-size: 15px;
-    font-weight: bolder;
-    list-style-type: none;
-    /* color: #00000060; */
-}
-
 .post-header{
     height: 150px;
 }
 
 .passage-head-image{
     opacity: 1;
-    mix-blend-mode: hard-light;
+    /* mix-blend-mode: hard-light; */
     filter: blur(2px);
+    /* filter: grayscale(20%); */
 }
 
 .post-title{
@@ -92,19 +77,57 @@ body .markdown-body {
     padding: 220px 20px;
 }
 
-#category a {
-    text-decoration: none;
-    color: #000;
+#category {
+    position: fixed;
+    right: 4%;
+    top: 35%;
+    opacity: 0;
+    transition: 0.2s;
 }
 
-/* 状态一: 未被访问过的链接 */
-#category a:link {
+.index{
+    margin: 10px 10px 10px 15px;
+    font-size: 15px;
+    font-weight: bolder;
+    list-style-type: none;
+    /* color: #00000060; */
+}
+
+#category a {
     text-decoration: none;
     color: #00000065;
+    transition: 0.1s;
 }
 
 /* 状态三: 鼠标划过(停留)的链接(默认红色) */
 #category a:hover {
     text-decoration: none;
     color: #000000;
+    transition: 0.1s;
+}
+
+.currentlyReading{
+    color: #000000!important;
+}
+
+.hljs-ln-numbers {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    text-align: center;
+    color: #ccc;
+    border-right: 1px solid #CCC;
+    vertical-align: top;
+    padding-right: 5px;
+
+    /* your custom style here */
+}
+
+/* for block of code */
+.hljs-ln-code {
+    padding-left: 10px;
 }
