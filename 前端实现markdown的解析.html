@@ -11,9 +11,15 @@
         <link href="./assets/css/github-markdown.css" rel="stylesheet" />
         <link href="./assets/css/MdPassage.css" rel="stylesheet" />
         <script src="./assets/js/markdown-it.min.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-light.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js/dist/highlightjs-line-numbers.min.js"></script>
         <script src="./assets/js/MdToHtm.js" defer="defer"></script>
+        <script src="./assets/js/parallax.js" type="text/javascript" defer="defer"></script>
+        <script>
+            hljs.highlightAll();
+            hljs.initLineNumbersOnLoad ({ singleLine:true });
+        </script>
     </head>
 
     <body>
@@ -212,28 +218,32 @@ for (let index in titles) {
 
 - 简单设置样式：
 ```CSS
+
 #category {
     position: fixed;
-    right: 5%;
+    right: 4%;
     top: 35%;
     transition: 0.2s;
 }
 
+.index{
+    margin: 10px 10px 10px 15px;
+    font-size: 15px;
+    font-weight: bolder;
+    list-style-type: none;
+}
+
 #category a {
     text-decoration: none;
-    color: #000;
-}
-
-/* 未被访问过的链接 */
-#category a:link {
-    text-decoration: none;
     color: #00000065;
+    transition: 0.5s;
 }
 
-/* 鼠标划过(停留)时的链接 */
+/* 状态三: 鼠标划过(停留)的链接(默认红色) */
 #category a:hover {
     text-decoration: none;
     color: #000000;
+    transition: 0.5s;
 }
 
 ```
@@ -351,28 +361,32 @@ for (let index in titles) {
 ### MdPassage.css 文件如下:
 
 ```CSS
+
 #category {
     position: fixed;
-    right: 5%;
+    right: 4%;
     top: 35%;
     transition: 0.2s;
 }
 
+.index{
+    margin: 10px 10px 10px 15px;
+    font-size: 15px;
+    font-weight: bolder;
+    list-style-type: none;
+}
+
 #category a {
     text-decoration: none;
-    color: #000;
-}
-
-/* 未被访问过的链接 */
-#category a:link {
-    text-decoration: none;
     color: #00000065;
+    transition: 0.5s;
 }
 
-/* 鼠标划过(停留)时的链接 */
+/* 状态三: 鼠标划过(停留)的链接(默认红色) */
 #category a:hover {
     text-decoration: none;
     color: #000000;
+    transition: 0.5s;
 }
 
 ```
@@ -383,20 +397,19 @@ for (let index in titles) {
 
 ## 附录
 
-### 常用html转义字符
+### 常用html转义字符:
 
 
 |  字符   | 十进制  | 转义字符  |
 |  ----  | ----  | ----  |
 | "  | &amp;#34\; | &amp;quot\; |
 | &  | &amp;#38\; | &amp;amp\; |
-| <  | &amp;#60\; | &amp;lt\; |
+| &lt;  | &amp;#60\; | &amp;lt\; |
 
 
             </div>
         </div>
         <div id="category"></div>
+        <!-- <div id="currentlyReading" style="min-height: 60px; width: 100%; position: fixed; top: 35%; background-color: aliceblue;"></div> -->
     </body>
-    <script src="./assets/js/parallax.js" type="text/javascript"></script>
-    <script>hljs.highlightAll();</script>
 </html>
