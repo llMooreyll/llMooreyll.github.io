@@ -885,6 +885,7 @@ h6 {
     white-space: break-spaces;
     background-color: var(--color-neutral-muted);
     border-radius: 6px;
+    color: #d4493a;
 }
 
 .markdown-body code br,
