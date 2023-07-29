@@ -40,6 +40,12 @@ a:hover {
     transition: 0.2s;
 }
 
+nav a:hover {
+    text-decoration: none;
+    color: #ffffff;
+    transition: 0.2s;
+}
+
 /* fixes */
 .mdui-toolbar {
     height: 64px;
